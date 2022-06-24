@@ -7,5 +7,13 @@
     <fragment
         android:id="@+id/movieFragment"
         android:name="org.d3if0084.moviesupdates.ui.MovieFragment"
-        android:label="MovieFragment" />
+        android:label="Movies Updates" >
+        <action
+            android:id="@+id/action_movieFragment_to_aboutFragment"
+            app:destination="@id/aboutFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/aboutFragment"
+        android:name="org.d3if0084.moviesupdates.ui.AboutFragment"
+        android:label="Tentang Movies Updates" />
 </navigation>

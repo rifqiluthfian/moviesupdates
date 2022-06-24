@@ -1,13 +1,13 @@
 package org.d3if0084.moviesupdates.ui
 
 import android.os.Bundle
-import android.view.LayoutInflater
-import android.view.View
-import android.view.ViewGroup
+import android.view.*
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
+import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.DividerItemDecoration
 import androidx.recyclerview.widget.RecyclerView
+import org.d3if0084.moviesupdates.R
 import org.d3if0084.moviesupdates.databinding.FragmentMovieBinding
 import org.d3if0084.moviesupdates.network.ApiStatus
 
@@ -20,10 +20,9 @@ class MovieFragment : Fragment() {
     private lateinit var myAdapter: MovieAdapter
 
     override fun onCreateView(
-        inflater: LayoutInflater, container: ViewGroup?,
-        savedInstanceState: Bundle?
-    ): View {
+        inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View {
         binding = FragmentMovieBinding.inflate(layoutInflater, container, false)
+        setHasOptionsMenu(true)
         myAdapter = MovieAdapter()
         with(binding.recyclerView) {
             addItemDecoration(DividerItemDecoration(context, RecyclerView.VERTICAL))
@@ -43,6 +42,21 @@ class MovieFragment : Fragment() {
             updateProgress(it)
         })
         viewModel.scheduleUpdater(requireActivity().application)
+    }
+    override fun onCreateOptionsMenu(menu: Menu, inflater: MenuInflater) {
+        super.onCreateOptionsMenu(menu, inflater)
+        inflater.inflate(R.menu.options_menu, menu)
+    }
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+       when(item.itemId) {
+            R.id.menu_about -> {
+                findNavController().navigate(
+                    R.id.action_movieFragment_to_aboutFragment
+                )
+                return true
+            }
+        }
+        return super.onOptionsItemSelected(item)
     }
 
     private fun updateProgress(status: ApiStatus) {

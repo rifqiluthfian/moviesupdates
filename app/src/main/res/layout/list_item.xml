@@ -28,7 +28,7 @@
         app:layout_constraintStart_toEndOf="@id/imageView"
         tools:text="Angsa" />
     <TextView
-        android:id="@+id/latinTextView"
+        android:id="@+id/tahunTextView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textStyle="italic"

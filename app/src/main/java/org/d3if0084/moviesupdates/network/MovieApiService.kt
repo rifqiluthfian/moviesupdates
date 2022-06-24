@@ -8,7 +8,7 @@ import retrofit2.converter.moshi.MoshiConverterFactory
 import retrofit2.http.GET
 
 private const val BASE_URL = "https://raw.githubusercontent.com/" +
-        "indraazimi/galeri-hewan/static-api/"
+        "rifqiluthfian/moviesupdates/static-api/"
 
 private val moshi = Moshi.Builder()
     .add(KotlinJsonAdapterFactory())
@@ -19,7 +19,7 @@ private val retrofit = Retrofit.Builder()
     .baseUrl(BASE_URL)
     .build()
 interface MovieApiService {
-    @GET("static-api.json")
+    @GET("movie.json")
     suspend fun getMovie(): List<Movie>
 }
 object MovieApi {

@@ -36,7 +36,7 @@ class MovieAdapter : RecyclerView.Adapter<MovieAdapter.ViewHolder>() {
     ) : RecyclerView.ViewHolder(binding.root) {
         fun bind(movie: Movie) = with(binding) {
             namaTextView.text = movie.nama
-            latinTextView.text = movie.namaLatin
+            tahunTextView.text = movie.tahun
             Glide.with(imageView.context)
                 .load(MovieApi.getMovieUrl(movie.imageId))
                 .error(R.drawable.ic_baseline_broken_image_24)
