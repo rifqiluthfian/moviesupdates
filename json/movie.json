@@ -1,0 +1,14 @@
+{
+  "movie":[
+    {
+    "id" : "01",
+    "nama" : "Doctor Strange in the Multiverse of Madness",
+    "image" : "images/01.jpeg"
+  },
+    {
+    "id" : "02",
+    "nama" : "Umma",
+    "image" : "images/02.jpeg"
+    }
+  ] 
+}
