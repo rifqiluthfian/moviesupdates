@@ -2,7 +2,7 @@ package org.d3if0084.moviesupdates.network
 
 import com.squareup.moshi.Moshi
 import com.squareup.moshi.kotlin.reflect.KotlinJsonAdapterFactory
-import org.d3if0084.moviesupdates.model.Movie
+import org.d3if0084.moviesupdates.model.Paket
 import retrofit2.Retrofit
 import retrofit2.converter.moshi.MoshiConverterFactory
 import retrofit2.http.GET
@@ -19,18 +19,17 @@ private val retrofit = Retrofit.Builder()
     .baseUrl(BASE_URL)
     .build()
 
-interface MovieApiService {
-    @GET("movie.json")
-    suspend fun getMovie(): List<Movie>
+interface PaketApiService {
+    @GET("paket.json")
+    suspend fun getPaket(): List<Paket>
 }
-
-object MovieApi {
-    val service: MovieApiService by lazy {
-        retrofit.create(MovieApiService::class.java)
+object PaketApi {
+    val service: PaketApiService by lazy {
+        retrofit.create(PaketApiService::class.java)
     }
-    fun getMovieUrl(nama: String): String {
-        return "$BASE_URL$nama.jpg"
+
+    fun getPaketUrl(nama: String): String {
+        return "$BASE_URL$nama.png"
     }
 }
-
-enum class ApiStatus { LOADING, SUCCESS, FAILED }
+enum class ApiStatus2 { LOADING, SUCCESS, FAILED }
