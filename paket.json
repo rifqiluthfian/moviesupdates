@@ -1,0 +1,5 @@
+[
+  {"nama": "Paket Reguler 1 Bulan", "harga": "35.000", "imageId": "satubulan"},
+  {"nama": "Paket Hemat 2 Bulan", "harga": "50.000", "imageId": "duabulan"},
+  {"nama": "Paket Murah Meriah 3 Bulan", "harga": "68.000", "imageId": "tigabulan"}
+]
